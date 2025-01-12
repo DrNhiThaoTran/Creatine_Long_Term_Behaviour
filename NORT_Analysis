@@ -1,0 +1,103 @@
+library(lme4)
+library(lmerTest)
+library(emmeans)
+
+
+#NORT SESSION 1: Learning of total object exploration duration
+
+
+# Load data
+data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/NORTLearning - no67.csv")
+
+# Convert categorical variables to factors
+data$Birth.Code <- as.factor(data$Birth.Code)
+data$Diet.Code <- as.factor(data$Diet.Code)
+data$Sex.Code <- as.factor(data$Sex.Code)
+data$Cross.Foster.Code <- as.factor(data$Cross.Foster.Code)
+data$Age.Code <- as.factor(data$Age.Code) 
+
+# Fit a mixed-effects model with interactions
+model <- lmer(Learning ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
+                (1 | Cross.Foster.Code), data = data)
+
+# Model summary
+summary(model)
+
+# ANOVA table for fixed effects
+aov_results <- anova(model)
+print(aov_results)
+
+# Likelihood Ratio Test to check significance of Cross Foster Code
+model_reduced <- lm(Learning ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+lrt_results <- anova(model, model_reduced)
+print(lrt_results)
+
+
+# Post-hoc pairwise comparisons
+
+if ("Birth.Code:Diet.Code" %in% rownames(aov_results)) {
+  posthoc_birth_diet <- emmeans(model, pairwise ~ Birth.Code * Diet.Code, adjust = "tukey")
+  print(posthoc_birth_diet)
+}
+
+# Check model assumptions
+par(mfrow = c(2, 2))
+plot(model)
+
+
+
+#NORT SESSION 2: Learning of total object exploration duration
+
+
+# Load data
+data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/NORTDI - no67.csv")
+
+
+# Convert categorical variables to factors
+data$Birth.Code <- as.factor(data$Birth.Code)
+data$Diet.Code <- as.factor(data$Diet.Code)
+data$Sex.Code <- as.factor(data$Sex.Code)
+data$Cross.Foster.Code <- as.factor(data$Cross.Foster.Code)
+data$Age.Code <- as.factor(data$Age.Code) 
+
+# Fit a mixed-effects model with interactions
+model <- lmer(Total.object.exploration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
+                (1 | Cross.Foster.Code), data = data)
+
+# Model summary
+summary(model)
+
+# ANOVA table for fixed effects
+aov_results <- anova(model)
+print(aov_results)
+
+# Likelihood Ratio Test to check significance of Cross Foster Code
+model_reduced <- lm(Total.object.exploration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+lrt_results <- anova(model, model_reduced)
+print(lrt_results)
+
+
+
+#NORT: DTI
+
+# Fit a mixed-effects model with interactions
+model <- lmer(DTI ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
+                (1 | Cross.Foster.Code), data = data)
+
+# Model summary
+summary(model)
+
+# ANOVA table for fixed effects
+aov_results <- anova(model)
+print(aov_results)
+
+# Likelihood Ratio Test to check significance of Cross Foster Code
+model_reduced <- lm(DTI ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+lrt_results <- anova(model, model_reduced)
+print(lrt_results)
+
+if ("Birth.Code:Age.Code" %in% rownames(aov_results)) {
+  posthoc_diet_age <- emmeans(model, pairwise ~ Birth.Code * Age.Code, adjust = "tukey")
+  print(posthoc_diet_age)
+}
+
