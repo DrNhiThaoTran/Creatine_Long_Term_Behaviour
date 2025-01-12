@@ -7,7 +7,7 @@ library(emmeans)
 
 
 # Load data
-data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/NORTLearning - no67.csv")
+data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/NORTLearning.csv")
 
 # Convert categorical variables to factors
 data$Birth.Code <- as.factor(data$Birth.Code)
@@ -50,7 +50,7 @@ plot(model)
 
 
 # Load data
-data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/NORTDI - no67.csv")
+data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/NORTDI.csv")
 
 
 # Convert categorical variables to factors
