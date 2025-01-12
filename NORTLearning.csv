@@ -1,0 +1,85 @@
+Animal ID,Cross Foster Code,Sex Code,Birth Code,Diet Code,Age Code,Learning
+5,DW420b,Female,Asphyxia,Control,18,600
+30,DW426,Male,Asphyxia,Creatine,18,565.63
+18,DW454,Male,Asphyxia,Control,18,565.51
+12,DW400,Male,Asphyxia,Control,18,565.26
+65,DW413,Female,C-Section,Control,18,565
+56,DW432,Male,C-Section,Control,18,564.88
+13,DW420b,Male,Asphyxia,Control,18,564.63
+16,DW454,Male,Asphyxia,Control,18,564.63
+41,DW432,Female,C-Section,Control,18,564.51
+48, DW352,Male,C-Section,Control,18,564.5
+82, DW426d,Male,C-Section,Creatine,18,564.5
+3,DW393,Female,Asphyxia,Control,18,564.13
+68,DW426d,Female,C-Section,Creatine,18,564.13
+75,DW478,Female,C-Section,Creatine,18,563.88
+62,DW500,Male,C-Section,Control,18,563.38
+63,DW500,Male,C-Section,Control,18,563.38
+24,DW417b,Female,Asphyxia,Creatine,18,563.13
+1,DW380,Female,Asphyxia,Control,18,562.88
+59,DW434,Male,C-Section,Control,18,562.51
+86, DW460,Male,C-Section,Creatine,18,562.5
+8,DW426c,Female,Asphyxia,Control,18,562.25
+22,DW541,Male,Asphyxia,Control,18,562.25
+53,DW424,Male,C-Section,Control,18,562.13
+72,DW460,Female,C-Section,Creatine,18,562.13
+80,DW417b,Male,C-Section,Creatine,18,562.13
+34,DW424,Female,C-Section,Control,18,561.76
+26,DW420,Female,Asphyxia,Creatine,18,561.63
+70,DW426d,Female,C-Section,Creatine,18,561.63
+2,DW380b,Female,Asphyxia,Control,18,561.38
+44,DW438,Female,C-Section,Control,18,561.01
+20,DW541,Male,Asphyxia,Control,18,560.76
+77,DW413,Male,C-Section,Creatine,18,560.63
+71,DW449b,Female,C-Section,Creatine,18,369.33
+85,  DW449b,Male,C-Section,Creatine,18,322.42
+91, DW463,Female,Asphyxia,Creatine,18,165.63
+110,DW539,Female,Asphyxia,Creatine,18,133.38
+101,DW394,Male,Asphyxia,Creatine,18,131.63
+114,DW518,Male,Asphyxia,Creatine,18,122.13
+89,DW459-b,Female,Asphyxia,Creatine,18,120.51
+96, DW512,Female,Asphyxia,Creatine,18,111.88
+113,DW571,Male,Asphyxia,Creatine,18,91.75
+106, DW518,Female,Asphyxia,Creatine,18,87.88
+95, DW512,Male,Asphyxia,Creatine,18,86
+10,DW489b,Female,Asphyxia,Control,18,6.38
+6,DW420b,Female,Asphyxia,Control,41,600
+87,DW460,Male,C-Section,Creatine,41,567.76
+27,DW420,Female,Asphyxia,Creatine,41,565.88
+83,DW426d,Male,C-Section,Creatine,41,565.88
+45,DW438,Female,C-Section,Control,41,565.76
+49,DW352,Male,C-Section,Control,41,565.76
+31,DW352,Female,C-Section,Control,41,565.38
+73,DW460,Female,C-Section,Creatine,41,564.75
+21,DW541,Male,Asphyxia,Control,41,564.51
+35,DW424,Female,C-Section,Control,41,564.51
+23,DW541,Male,Asphyxia,Control,41,564.38
+47,DW500,Female,C-Section,Control,41,564.38
+66,DW413,Female,C-Section,Creatine,41,564.26
+69,DW426d,Female,C-Section,Creatine,41,564.26
+60,DW434,Male,C-Section,Control,41,564.13
+17,DW454,Male,Asphyxia,Control,41,564.01
+57,DW432,Male,C-Section,Control,41,563.01
+78,DW413,Male,C-Section,Creatine,41,563
+9,DW426c,Female,Asphyxia,Control,41,562.88
+11,DW489b,Female,Asphyxia,Control,41,562.76
+39,DW426,Female,C-Section,Control,41,562.76
+52,DW380,Male,C-Section,Control,41,562.75
+84,DW449,Male,C-Section,Creatine,41,562.75
+29,DW426,Male,Asphyxia,Creatine,41,562.38
+4,DW393,Female,Asphyxia,Control,41,562.13
+37, DW426b,Female,C-Section,Control,41,562.01
+64,DW500,Male,C-Section,Control,41,561.5
+42,DW432,Female,C-Section,Control,41,561.38
+54,DW424,Male,C-Section,Control,41,561.25
+14,DW420b,Male,Asphyxia,Control,41,561.13
+102,DW417b,Female,Asphyxia,Creatine,41,137.63
+92,DW463,Female,Asphyxia,Creatine,41,116.63
+111,DW539,Female,Asphyxia,Creatine,41,115.26
+107,DW518,Female,Asphyxia,Creatine,41,100.63
+105,DW512,Female,Asphyxia,Creatine,41,100.51
+104,DW512,Female,Asphyxia,Creatine,41,88.76
+115,DW518,Male,Asphyxia,Creatine,41,84.38
+98,DW571,Male,Asphyxia,Creatine,41,70.13
+90, DW459-b,Female,Asphyxia,Creatine,41,64.88
+100,DW394,Male,Asphyxia,Creatine,41,0.88
