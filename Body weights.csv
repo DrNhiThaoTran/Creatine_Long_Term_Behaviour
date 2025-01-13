@@ -1,0 +1,527 @@
+﻿Animal ID,Birth Code,Diet Code,Age Code,Sex Code,Weight
+2173,Asphyxia,Control,3,Male,4.17
+2171,Asphyxia,Control,3,Male,4.54
+2174,Asphyxia,Control,3,Male,4.56
+2161,Asphyxia,Control,3,Male,4.57
+2172,Asphyxia,Control,3,Male,4.66
+2164,Asphyxia,Control,3,Male,4.83
+2162,Asphyxia,Control,3,Male,5.42
+2560,C section,Creatine,3,Male,5.52
+2559,C section,Creatine,3,Male,6.14
+2839,C section,Control,3,Male,2.71
+3185,Asphyxia,Control,3,Female,3.6
+2542,Asphyxia,Control,3,Female,3.71
+2763,C section,Control,3,Female,4.27
+2761,C section,Control,3,Female,4.4
+2763,C section,Control,3,Female,4.4
+2896,C section,Creatine,3,Male,4.4
+2578,Asphyxia,Control,3,Female,4.43
+2249,C section,Control,3,Male,4.56
+2599,C section,Control,3,Female,4.58
+2577,Asphyxia,Control,3,Female,4.6
+2941,Asphyxia,Creatine,3,Female,4.6
+2465,Asphyxia,Control,3,Male,4.64
+2838,C section,Control,3,Female,4.64
+2986,Asphyxia,Control,3,Female,4.77
+2600,C section,Control,3,Female,4.8
+2840,C section,Control,3,Female,4.84
+2466,Asphyxia,Control,3,Female,4.92
+2510,Asphyxia,Creatine,3,Female,4.93
+2248,C section,Control,3,Male,4.95
+2178,C section,Control,3,Male,5
+2597,C section,Control,3,Female,5.01
+3201,Asphyxia,Control,3,Female,5.02
+2508,Asphyxia,Creatine,3,Female,5.03
+2857,C section,Control,3,Male,5.09
+3153,C section,Creatine,3,Female,5.15
+2805,C section,Creatine,3,Male,5.24
+2642,Asphyxia,Control,3,Female,5.28
+2858,C section,Control,3,Female,5.35
+3203,Asphyxia,Control,3,Male,5.35
+3203,Asphyxia,Control,3,Female,5.4
+2509,Asphyxia,Creatine,3,Female,5.41
+2457,C section,Creatine,3,Female,5.44
+3154,C section,Creatine,3,Male,5.47
+2528,Asphyxia,Control,3,Female,5.53
+2512,Asphyxia,Creatine,3,Male,5.55
+2859,C section,Control,3,Female,5.55
+2802,C section,Creatine,3,Male,5.59
+2809,Asphyxia,Control,3,Male,5.59
+3223,C section,Creatine,3,Female,5.61
+3225,C section,Creatine,3,Female,5.61
+2579,Asphyxia,Control,3,Female,5.65
+2804,C section,Creatine,3,Female,5.68
+3211,C section,Creatine,3,Female,5.71
+2639,Asphyxia,Control,3,Male,5.84
+2984,Asphyxia,Control,3,Male,5.84
+2639,Asphyxia,Control,3,Male,5.88
+2491,C section,Control,3,Male,5.9
+2179,C section,Control,3,Male,6
+3155,C section,Creatine,3,Male,6.06
+2553,Asphyxia,Control,3,Female,6.08
+2217,C section,Control,3,Male,6.09
+2810,Asphyxia,Control,3,Female,6.09
+2228,C section,Control,3,Male,6.34
+3224,C section,Creatine,3,Male,6.36
+2501,Asphyxia,Control,3,Male,6.38
+3212,C section,Creatine,3,Female,6.42
+2490,C section,Control,3,Male,6.56
+3156,C section,Creatine,3,Male,6.66
+2370,C section,Control,3,Male,6.85
+2782,C section,Control,3,Male,6.86
+2215,C section,Control,3,Female,6.89
+2781,C section,Control,3,Male,6.9
+2497,Asphyxia,Creatine,3,Female,6.92
+2691,C section,Creatine,3,Female,7.08
+2692,C section,Creatine,3,Female,7.08
+2371,C section,Control,3,Male,7.21
+2726,C section,Control,3,Female,4.35
+2527,C section,Control,3,Male,5.09
+2725,C section,Control,3,Male,5.27
+2817,C section,Control,3,Female,5.66
+2368,C section,Control,3,Male,5.89
+2371,C section,Control,3,Female,6.24
+2686,Asphyxia,Creatine,3,Female,6.33
+2685,Asphyxia,Creatine,3,Male,6.42
+2816,C section,Control,3,Male,6.78
+2508,Asphyxia,Creatine,7,Female,6.97
+2510,Asphyxia,Creatine,7,Female,7.1
+2434,Asphyxia,Control,7,Female,7.205
+2685,Asphyxia,Creatine,7,Male,7.5
+2685,Asphyxia,Creatine,7,Male,7.61
+2509,Asphyxia,Creatine,7,Female,7.66
+2435,Asphyxia,Control,7,Female,7.75
+2691,C section,Creatine,7,Female,7.9
+2436,Asphyxia,Control,7,Female,8.05
+2692,C section,Creatine,7,Female,8.49
+2512,Asphyxia,Creatine,7,Male,9.2
+3185,Asphyxia,Control,7,Female,5.74
+2835,C section,Control,7,Female,5.75
+2171,Asphyxia,Control,7,Male,6
+2161,Asphyxia,Control,7,Male,6.17
+2833,C section,Control,7,Male,6.44
+2599,C section,Control,7,Female,6.49
+2832,C section,Control,7,Male,6.51
+2164,Asphyxia,Control,7,Male,6.72
+2600,C section,Control,7,Female,6.81
+2249,C section,Control,7,Male,6.87
+2172,Asphyxia,Control,7,Male,7
+2174,Asphyxia,Control,7,Male,7
+2542,Asphyxia,Control,7,Female,7
+2597,C section,Control,7,Female,7.01
+2831,C section,Control,7,Female,7.1
+2248,C section,Control,7,Male,7.11
+3202,Asphyxia,Control,7,Female,7.26
+2867,Asphyxia,Creatine,7,Male,7.28
+2162,Asphyxia,Control,7,Male,7.29
+2803,Asphyxia,Control,7,Male,7.31
+3204,Asphyxia,Control,7,Female,7.34
+2986,Asphyxia,Control,7,Female,7.54
+2762,C section,Control,7,Female,7.72
+2941,Asphyxia,Creatine,7,Female,7.81
+2763,C section,Control,7,Female,7.89
+3211,C section,Creatine,7,Female,7.98
+2466,Asphyxia,Control,7,Female,8.01
+3213,C section,Creatine,7,Male,8.07
+2465,Asphyxia,Control,7,Male,8.26
+2869,Asphyxia,Creatine,7,Male,8.4
+3153,C section,Creatine,7,Female,8.41
+2553,Asphyxia,Control,7,Female,8.45
+2940,Asphyxia,Creatine,7,Male,8.47
+2858,C section,Control,7,Female,8.53
+2984,Asphyxia,Control,7,Male,8.54
+2857,C section,Control,7,Male,8.64
+2795,Asphyxia,Control,7,Male,8.67
+2640,Asphyxia,Control,7,Male,8.72
+2866,Asphyxia,Creatine,7,Female,8.75
+3212,C section,Creatine,7,Female,8.75
+2838,C section,Control,7,Female,8.8
+2804,C section,Creatine,7,Female,8.81
+3154,C section,Creatine,7,Male,8.82
+2859,C section,Control,7,Female,9.02
+2803,C section,Creatine,7,Male,9.05
+2782,C section,Control,7,Male,9.07
+2710,Asphyxia,Creatine,7,Male,9.15
+2805,C section,Creatine,7,Male,9.15
+2840,C section,Control,7,Female,9.2
+2781,C section,Control,7,Male,9.21
+3223,C section,Creatine,7,Female,9.28
+3225,C section,Creatine,7,Female,9.29
+3155,C section,Creatine,7,Male,9.3
+2639,Asphyxia,Control,7,Male,9.37
+2457,C section,Creatine,7,Female,9.53
+2528,Asphyxia,Control,7,Female,9.53
+2761,C section,Control,7,Female,9.57
+2712,Asphyxia,Creatine,7,Female,9.71
+2817,C section,Control,7,Female,9.77
+2497,Asphyxia,Creatine,7,Female,9.89
+2178,C section,Control,7,Male,10
+3224,C section,Creatine,7,Male,10.1
+2227,C section,Control,7,Female,10.32
+2228,C section,Control,7,Male,10.59
+2809,Asphyxia,Control,7,Male,10.75
+2179,C section,Control,7,Male,11
+2810,Asphyxia,Control,7,Female,11.08
+2816,C section,Control,7,Male,11.08
+2578,Asphyxia,Control,7,Female,7.2
+2577,Asphyxia,Control,7,Female,7.95
+2485,C section,Control,7,Female,8.06
+2486,C section,Control,7,Male,8.38
+2368,C section,Control,7,Male,8.55
+2371,C section,Control,7,Female,8.62
+2216,C section,Control,7,Female,8.65
+2218,C section,Control,7,Male,8.91
+2366,C section,Control,7,Male,8.98
+2217,C section,Control,7,Male,9.74
+2365,C section,Control,7,Male,9.94
+2491,C section,Control,7,Male,10.16
+2370,C section,Control,7,Male,10.22
+2491,C section,Control,7,Male,10.44
+2371,C section,Control,7,Male,10.51
+2215,C section,Control,7,Female,10.7
+2579,Asphyxia,Control,7,Female,8.13
+2726,C section,Control,7,Female,8.17
+2727,C section,Control,7,Male,8.6
+2434,Asphyxia,Control,14,Female,10.88
+2435,C section,Control,14,Female,11.16
+2436,C section,Control,14,Female,11.49
+2457,C section,Creatine,14,Female,13.15
+2172,Asphyxia,Control,14,Male,6
+2173,Asphyxia,Control,14,Male,6
+2174,Asphyxia,Control,14,Male,6
+2171,Asphyxia,Control,14,Male,7
+2161,Asphyxia,Control,14,Male,8.45
+2162,C section,Control,14,Male,9.01
+2835,C section,Control,14,Female,9.67
+2579,Asphyxia,Control,14,Female,9.7
+2685,Asphyxia,Creatine,14,Male,9.8
+2683,Asphyxia,Creatine,14,Female,9.81
+2762,C section,Control,14,Female,9.81
+2485,C section,Control,14,Female,9.89
+2795,Asphyxia,Control,14,Male,9.9
+2249,C section,Control,14,Male,10.01
+2683,Asphyxia,Creatine,14,Male,10.04
+2831,C section,Control,14,Female,10.09
+2599,C section,Control,14,Female,10.27
+2763,C section,Control,14,Female,10.31
+2832,C section,Control,14,Male,10.38
+2486,C section,Control,14,Male,10.42
+2868,Asphyxia,Creatine,14,Female,10.54
+2858,C section,Control,14,Female,10.58
+2577,Asphyxia,Control,14,Female,10.6
+3202,Asphyxia,Control,14,Female,10.6
+2369,C section,Control,14,Female,10.7
+3204,Asphyxia,Control,14,Female,10.7
+2597,C section,Control,14,Female,10.74
+3185,Asphyxia,Control,14,Female,10.89
+3153,C section,Creatine,14,Female,10.91
+3154,C section,Creatine,14,Male,10.94
+2833,C section,Control,14,Male,10.96
+2600,C section,Control,14,Female,10.99
+3203,Asphyxia,Control,14,Male,11
+2857,C section,Control,14,Male,11.05
+2691,C section,Creatine,14,Female,11.11
+2578,Asphyxia,Control,14,Female,11.3
+2859,C section,Control,14,Female,11.32
+2466,Asphyxia,Control,14,Female,11.5
+2761,C section,Control,14,Female,11.58
+2840,C section,Control,14,Female,11.61
+2941,Asphyxia,Creatine,14,Female,11.66
+3155,C section,Creatine,14,Male,11.73
+2508,Asphyxia,Creatine,14,Female,11.77
+2838,C section,Control,14,Female,11.77
+2509,Asphyxia,Creatine,14,Female,11.81
+3211,C section,Creatine,14,Female,11.84
+3223,C section,Creatine,14,Female,11.85
+3225,C section,Creatine,14,Female,11.9
+2165,Asphyxia,Control,14,Male,12.2
+2178,C section,Control,14,Male,12.2
+2986,Asphyxia,Control,14,Female,12.22
+2642,Asphyxia,Control,14,Female,12.25
+2560,C section,Creatine,14,Male,12.34
+2640,Asphyxia,Control,14,Male,12.38
+2491,C section,Control,14,Male,12.39
+2179,C section,Control,14,Male,12.4
+2215,C section,Control,14,Female,12.4
+2216,C section,Control,14,Female,12.4
+2510,Asphyxia,Creatine,14,Female,12.47
+3213,C section,Creatine,14,Male,12.52
+2559,C section,Creatine,14,Male,12.6
+3224,C section,Creatine,14,Male,12.63
+2218,C section,Control,14,Male,12.75
+2490,C section,Control,14,Male,12.78
+2866,Asphyxia,Creatine,14,Female,12.83
+2227,C section,Control,14,Male,12.91
+2217,C section,Control,14,Male,12.95
+2940,Asphyxia,Creatine,14,Male,13.09
+2227,C section,Control,14,Female,13.19
+2817,C section,Control,14,Female,13.2
+2370,C section,Control,14,Male,13.42
+2371,C section,Control,14,Male,13.53
+2984,Asphyxia,Control,14,Male,13.8
+2710,Asphyxia,Creatine,14,Male,14.66
+2816,C section,Control,14,Male,14.93
+2712,Asphyxia,Creatine,14,Female,15.09
+2497,Asphyxia,Creatine,14,Female,15.24
+2501,Asphyxia,Control,14,Male,15.67
+2512,Asphyxia,Creatine,14,Male,16.74
+2693,C section,Creatine,14,Male,17.59
+2366,C section,Control,14,Male,10.2
+2804,C section,Creatine,14,Female,11.17
+2803,C section,Creatine,14,Male,12.14
+2805,C section,Creatine,14,Male,12.2
+2553,Asphyxia,Control,14,Female,12.53
+2810,Asphyxia,Control,14,Female,13.83
+2809,Asphyxia,Control,14,Male,14.03
+2365,C section,Control,18,Male,9.98
+2366,C section,Control,18,Male,10.2
+2832,C section,Control,18,Male,10.82
+2762,C section,Control,18,Female,11.3
+2833,C section,Control,18,Male,11.34
+2858,C section,Control,18,Female,11.57
+2763,C section,Control,18,Female,11.6
+2857,C section,Control,18,Male,11.73
+2859,C section,Control,18,Female,11.97
+2831,C section,Control,18,Female,12.29
+2835,C section,Control,18,Female,12.73
+2868,Asphyxia,Creatine,18,Female,12.76
+2683,Asphyxia,Creatine,18,Male,13.1
+2761,C section,Control,18,Female,13.1
+2805,C section,Creatine,18,Male,13.17
+2804,C section,Creatine,18,Female,13.3
+2803,C section,Creatine,18,Male,13.43
+3225,C section,Creatine,18,Female,13.76
+3185,Asphyxia,Control,18,Female,13.78
+3211,C section,Creatine,18,Female,13.78
+3203,Asphyxia,Control,18,Male,13.93
+2217,C section,Control,18,Male,14.05
+2227,C section,Control,18,Female,14.09
+2986,Asphyxia,Control,18,Female,14.27
+2838,C section,Control,18,Female,14.3
+2817,C section,Control,18,Female,14.4
+3223,C section,Creatine,18,Female,14.46
+2228,C section,Control,18,Male,14.49
+2840,C section,Control,18,Female,14.53
+3202,Asphyxia,Control,18,Female,14.53
+2179,C section,Control,18,Male,14.75
+2941,Asphyxia,Creatine,18,Female,14.87
+2810,Asphyxia,Control,18,Female,15
+2218,C section,Control,18,Male,15.04
+3224,C section,Creatine,18,Male,15.15
+2809,Asphyxia,Control,18,Male,15.16
+2869,Asphyxia,Creatine,18,Male,15.25
+2178,C section,Control,18,Male,15.3
+2781,C section,Control,18,Male,15.38
+2216,C section,Control,18,Female,15.6
+2215,C section,Control,18,Female,15.71
+2940,Asphyxia,Creatine,18,Male,16.25
+3212,C section,Creatine,18,Female,16.36
+2816,C section,Control,18,Male,16.47
+2782,C section,Control,18,Male,16.71
+2984,Asphyxia,Control,18,Male,16.82
+2866,Asphyxia,Creatine,18,Female,18.71
+2434,C section,Control,21,Female,14.66
+2491,C section,Control,21,Male,14.7
+2435,C section,Control,21,Female,15.76
+2490,C section,Control,21,Male,16.01
+2508,Asphyxia,Creatine,21,Female,16.04
+2781,C section,Control,21,Male,17
+2436,C section,Control,21,Female,17.37
+2642,Asphyxia,Control,21,Female,18.05
+2640,Asphyxia,Control,21,Male,18.58
+2782,C section,Control,21,Male,19.41
+2512,Asphyxia,Creatine,21,Male,20.16
+2639,Asphyxia,Control,21,Male,20.26
+2528,Asphyxia,Control,21,Female,20.83
+2174,Asphyxia,Control,21,Male,10.29
+2173,Asphyxia,Control,21,Male,10.81
+2171,Asphyxia,Control,21,Male,10.83
+2248,C section,Control,21,Male,11.02
+2172,Asphyxia,Control,21,Male,11.26
+3224,C section,Creatine,21,Male,11.93
+2485,C section,Control,21,Female,12.41
+2832,C section,Control,21,Male,12.73
+2685,Asphyxia,Creatine,21,Female,12.78
+2859,C section,Control,21,Female,13.05
+2486,C section,Control,21,Male,13.32
+2685,Asphyxia,Creatine,21,Male,13.5
+2833,C section,Control,21,Male,13.56
+2542,Asphyxia,Control,21,Female,13.79
+2857,C section,Control,21,Male,13.88
+2805,C section,Creatine,21,Male,13.91
+2831,C section,Control,21,Female,14
+2578,Asphyxia,Control,21,Female,14.17
+2465,Asphyxia,Control,21,Female,14.3
+2858,C section,Control,21,Female,14.65
+2835,C section,Control,21,Female,14.76
+2577,Asphyxia,Control,21,Female,14.77
+2227,C section,Control,21,Female,14.8
+2215,C section,Control,21,Female,15.01
+2803,C section,Creatine,21,Male,15.07
+2465,Asphyxia,Control,21,Male,15.11
+2560,C section,Creatine,21,Male,15.22
+2727,C section,Control,21,Male,15.29
+2560,C section,Creatine,21,Male,15.54
+2217,C section,Control,21,Male,15.57
+2249,C section,Control,21,Male,15.58
+2838,C section,Control,21,Female,15.62
+3185,Asphyxia,Control,21,Female,15.63
+3211,C section,Creatine,21,Female,15.9
+2868,Asphyxia,Creatine,21,Female,15.96
+2986,Asphyxia,Control,21,Female,15.96
+2218,C section,Control,21,Male,16.02
+2691,C section,Creatine,21,Female,16.18
+2817,C section,Control,21,Female,16.21
+2804,C section,Creatine,21,Female,16.29
+2510,Asphyxia,Creatine,21,Female,16.5
+3223,C section,Creatine,21,Female,16.63
+2228,C section,Control,21,Male,16.81
+3225,C section,Creatine,21,Female,16.99
+2579,Asphyxia,Control,21,Female,17.2
+2809,Asphyxia,Control,21,Female,17.22
+2179,C section,Control,21,Male,17.3
+2692,C section,Creatine,21,Female,17.59
+2984,Asphyxia,Control,21,Male,17.65
+2941,Asphyxia,Creatine,21,Female,17.68
+2725,C section,Control,21,Male,17.77
+2179,C section,Control,21,Male,17.8
+2810,Asphyxia,Control,21,Female,18.14
+2216,C section,Control,21,Female,18.28
+3212,C section,Creatine,21,Female,18.46
+2869,Asphyxia,Creatine,21,Male,18.58
+2940,Asphyxia,Creatine,21,Male,19.89
+2712,Asphyxia,Creatine,21,Female,19.91
+2816,C section,Control,21,Male,20.54
+2710,Asphyxia,Creatine,21,Male,20.64
+2866,Asphyxia,Creatine,21,Female,21.01
+2726,C section,Control,21,Female,25.45
+2164,Asphyxia,Control,21,Male,8.11
+2366,C section,Control,21,Male,9.1
+2162,Asphyxia,Control,21,Male,9.81
+2161,Asphyxia,Control,21,Male,10.21
+2365,C section,Control,21,Male,11.21
+2369,C section,Control,21,Female,13.24
+3202,Asphyxia,Control,21,Female,13.78
+3203,Asphyxia,Control,21,Male,13.84
+3204,Asphyxia,Control,21,Female,13.89
+2763,C section,Control,21,Female,14.33
+2368,C section,Control,21,Male,14.35
+2761,C section,Control,21,Female,15.56
+2762,C section,Control,21,Female,15.65
+2371,C section,Control,21,Male,19.3
+2457,C section,Creatine,21,Female,20.1
+2501,Asphyxia,Control,21,Male,21.56
+3202,Asphyxia,Control,28,Female,20.05
+3203,Asphyxia,Control,28,Male,20.89
+3204,Asphyxia,Control,28,Female,22.01
+2542,Asphyxia,Control,28,Female,13.73
+2509,Asphyxia,Creatine,28,Female,20.42
+2508,Asphyxia,Creatine,28,Female,20.71
+2553,Asphyxia,Control,28,Female,20.8
+2712,Asphyxia,Creatine,28,Female,23.52
+2512,Asphyxia,Creatine,28,Male,25.05
+2710,Asphyxia,Creatine,28,Male,25.72
+2528,Asphyxia,Control,28,Female,26.4
+2249,C section,Control,28,Male,14.58
+2215,C section,Control,28,Female,14.95
+2466,Asphyxia,Control,28,Female,15.13
+2174,Asphyxia,Control,28,Male,16
+2217,C section,Control,28,Male,16.57
+2465,Asphyxia,Control,28,Male,16.64
+2171,Asphyxia,Control,28,Male,17
+2172,Asphyxia,Control,28,Male,17.5
+2173,Asphyxia,Control,28,Male,17.5
+3185,Asphyxia,Control,28,Female,18.01
+2857,C section,Control,28,Male,18.58
+2578,Asphyxia,Control,28,Female,18.97
+2763,C section,Control,28,Female,19.1
+2577,Asphyxia,Control,28,Female,19.17
+2761,C section,Control,28,Female,19.71
+2859,C section,Control,28,Female,20.04
+2762,C section,Control,28,Female,20.12
+2868,Asphyxia,Creatine,28,Female,20.46
+2248,C section,Control,28,Male,21.14
+2579,Asphyxia,Control,28,Female,21.49
+2227,C section,Control,28,Female,21.5
+2726,C section,Control,28,Female,21.7
+2858,C section,Control,28,Female,21.75
+2491,C section,Control,28,Male,21.89
+3211,C section,Creatine,28,Female,22.08
+2218,C section,Control,28,Male,22.49
+3223,C section,Creatine,28,Female,22.6
+2228,C section,Control,28,Male,22.8
+2216,C section,Control,28,Female,23.16
+2725,C section,Control,28,Male,23.3
+3213,C section,Creatine,28,Male,23.3
+2642,Asphyxia,Control,28,Female,23.76
+2457,C section,Creatine,28,Female,23.9
+2727,C section,Control,28,Male,23.9
+2869,Asphyxia,Creatine,28,Male,23.97
+3224,C section,Creatine,28,Male,24.24
+2866,Asphyxia,Creatine,28,Female,24.45
+2497,Asphyxia,Creatine,28,Female,24.47
+3212,C section,Creatine,28,Female,24.5
+2640,Asphyxia,Control,28,Male,24.69
+2501,Asphyxia,Control,28,Male,24.74
+2639,Asphyxia,Control,28,Male,25.6
+2486,C section,Control,28,Male,19.3
+2485,C section,Control,28,Female,20.05
+2781,C section,Control,28,Male,24.59
+2782,C section,Control,28,Male,25.94
+2509,Asphyxia,Creatine,32,Female,21.98
+2508,Asphyxia,Creatine,32,Female,22.25
+2640,Asphyxia,Control,32,Male,24.8
+2639,Asphyxia,Control,32,Male,25.3
+2512,Asphyxia,Creatine,32,Male,27.45
+2642,Asphyxia,Control,32,Female,27.57
+2179,C section,Control,32,Male,28.1
+2248,C section,Control,32,Male,14.7
+2215,C section,Control,32,Female,15.98
+2161,Asphyxia,Control,32,Male,16
+2164,Asphyxia,Control,32,Male,17
+2174,Asphyxia,Control,32,Male,19.2
+2172,Asphyxia,Control,32,Male,19.53
+2486,C section,Control,32,Male,19.79
+2162,Asphyxia,Control,32,Male,20
+2171,Asphyxia,Control,32,Male,20
+3211,C section,Creatine,32,Female,20.23
+2817,C section,Control,32,Female,20.67
+3185,Asphyxia,Control,32,Female,21
+3185,Asphyxia,Control,32,Female,21
+2805,C section,Creatine,32,Male,21.08
+2803,C section,Creatine,32,Male,21.59
+2173,Asphyxia,Control,32,Male,21.6
+3184,Asphyxia,Control,32,Female,22.09
+3186,Asphyxia,Control,32,Male,22.13
+3213,C section,Creatine,32,Male,22.19
+2559,C section,Creatine,32,Male,22.39
+2485,C section,Control,32,Female,22.57
+2838,C section,Control,32,Female,22.9
+3202,Asphyxia,Control,32,Female,22.93
+2838,C section,Control,32,Female,23
+2726,C section,Control,32,Female,23.06
+2804,C section,Creatine,32,Female,23.09
+3223,C section,Creatine,32,Female,23.25
+3212,C section,Creatine,32,Female,23.49
+3203,Asphyxia,Control,32,Male,23.62
+3225,C section,Creatine,32,Female,23.7
+2816,C section,Control,32,Male,23.82
+2491,C section,Control,32,Male,24.5
+2228,C section,Control,32,Male,24.75
+2809,Asphyxia,Control,32,Male,24.75
+3204,Asphyxia,Control,32,Female,25.11
+2216,C section,Control,32,Female,25.33
+3224,C section,Creatine,32,Male,25.56
+2497,Asphyxia,Creatine,32,Female,25.75
+2810,Asphyxia,Control,32,Female,26.04
+2986,Asphyxia,Control,32,Female,26.16
+2941,Asphyxia,Creatine,32,Female,26.22
+2712,Asphyxia,Creatine,32,Female,26.79
+2528,Asphyxia,Control,32,Female,26.96
+2896,C section,Creatine,32,Male,27.04
+2781,C section,Control,32,Male,27.3
+2940,Asphyxia,Creatine,32,Male,28.94
+2782,C section,Control,32,Male,29.9
+2683,Asphyxia,Creatine,32,Male,21.84
+2249,C section,Control,32,Male,22.1
+2693,C section,Creatine,32,Male,24.41
