@@ -1,0 +1,131 @@
+> # Analysis of all data
+> 
+> Bodyweight<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/Body Weights.csv")
+> 
+> # Alter character variable to factor
+> Bodyweight$Birth.Code <- factor(Bodyweight$Birth.Code)
+> Bodyweight$Diet.Code <- factor(Bodyweight$Diet.Code)
+> Bodyweight$Sex.Code <- factor(Bodyweight$Sex.Code)
+> Bodyweight$Age.Code <- factor(Bodyweight$Age.Code)
+> 
+> # Fit ANCOVA model
+> res.aovWeight <- aov(Weight ~ Sex.Code + Age.Code*Birth.Code*Diet.Code, data = Bodyweight)
+> 
+> # Get ANOVA table
+> summary(res.aovWeight)
+                               Df Sum Sq Mean Sq F value   Pr(>F)    
+Sex.Code                        1      0     0.1   0.020   0.8876    
+Age.Code                        6  17430  2905.0 590.734  < 2e-16 ***
+Birth.Code                      1      4     3.6   0.741   0.3898    
+Diet.Code                       1    137   137.4  27.935 1.88e-07 ***
+Age.Code:Birth.Code             6     33     5.5   1.125   0.3464    
+Age.Code:Diet.Code              6     70    11.6   2.358   0.0295 *  
+Birth.Code:Diet.Code            1     24    24.2   4.924   0.0269 *  
+Age.Code:Birth.Code:Diet.Code   6     23     3.9   0.795   0.5743    
+Residuals                     497   2444     4.9                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> # Perform pairwise comparisons for Diet.Code at each Birth.Code level
+> posthoc_results <- emmeans(res.aovWeight, pairwise ~ Diet.Code | Birth.Code, adjust = "Tukeys")
+
+> print(posthoc_results)
+$emmeans
+Birth.Code = Asphyxia:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control     13.7 0.199 497     13.3     14.1
+ Creatine    15.4 0.276 497     14.8     15.9
+
+Birth.Code = C section:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control     14.1 0.160 497     13.7     14.4
+ Creatine    14.8 0.253 497     14.4     15.3
+
+Results are averaged over the levels of: Sex.Code, Age.Code 
+Confidence level used: 0.95 
+
+$contrasts
+Birth.Code = Asphyxia:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -1.687 0.340 497  -4.962  <.0001
+
+Birth.Code = C section:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -0.786 0.299 497  -2.624  0.0090
+
+Results are averaged over the levels of: Sex.Code, Age.Code 
+
+> 
+> # Perform pairwise comparisons for Diet.Code at each Age.Code level
+> posthoc_results_age_diet <- emmeans(res.aovWeight, pairwise ~ Diet.Code | Age.Code, adjust = "Tukeys")
+
+> print(posthoc_results_age_diet)
+$emmeans
+Age.Code = 3:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control     5.28 0.290 497     4.71     5.85
+ Creatine    5.76 0.472 497     4.83     6.68
+
+Age.Code = 7:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control     8.31 0.272 497     7.77     8.84
+ Creatine    8.56 0.412 497     7.75     9.37
+
+Age.Code = 14:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control    11.16 0.291 497    10.58    11.73
+ Creatine   12.42 0.406 497    11.62    13.21
+
+Age.Code = 18:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control    14.11 0.472 497    13.19    15.04
+ Creatine   14.67 0.599 497    13.49    15.85
+
+Age.Code = 21:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control    15.16 0.279 497    14.61    15.71
+ Creatine   16.94 0.444 497    16.06    17.81
+
+Age.Code = 28:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control    20.39 0.343 497    19.72    21.07
+ Creatine   23.33 0.585 497    22.18    24.48
+
+Age.Code = 32:
+ Diet.Code emmean    SE  df lower.CL upper.CL
+ Control    22.77 0.368 497    22.04    23.49
+ Creatine   24.16 0.506 497    23.17    25.16
+
+Results are averaged over the levels of: Sex.Code, Birth.Code 
+Confidence level used: 0.95 
+
+$contrasts
+Age.Code = 3:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -0.480 0.554 497  -0.866  0.3870
+
+Age.Code = 7:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -0.250 0.494 497  -0.507  0.6121
+
+Age.Code = 14:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -1.261 0.499 497  -2.527  0.0118
+
+Age.Code = 18:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -0.556 0.763 497  -0.729  0.4664
+
+Age.Code = 21:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -1.776 0.525 497  -3.382  0.0008
+
+Age.Code = 28:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -2.936 0.678 497  -4.329  <.0001
+
+Age.Code = 32:
+ contrast           estimate    SE  df t.ratio p.value
+ Control - Creatine   -1.395 0.626 497  -2.228  0.0263
+
+Results are averaged over the levels of: Sex.Code, Birth.Code 
