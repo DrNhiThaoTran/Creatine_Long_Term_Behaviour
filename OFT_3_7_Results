@@ -1,0 +1,631 @@
+library(lme4)
+> library(lmerTest)
+> library(emmeans)
+> 
+> 
+> # Load data
+> data<-read.csv("C://Users/nhith/OneDrive - Monash University/Project- Creatine Long term/SpM_Behaviour_Analysis/R Reanalysis/New analysis/OFTFINAL_3-7 only.csv")
+> 
+> # Convert categorical variables to factors
+> data$Birth.Code <- as.factor(data$Birth.Code)
+> data$Diet.Code <- as.factor(data$Diet.Code)
+> data$Sex.Code <- as.factor(data$Sex.Code)
+> data$Cross.Foster.Code <- as.factor(data$Cross.Foster.Code)
+> data$Age.Code <- as.factor(data$Age.Code) 
+> 
+> #OFT: Total Duration 
+> 
+> 
+> # Fit a mixed-effects model with interactions
+> model <- lmer(Total_Duration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
++                 (1 | Cross.Foster.Code), data = data)
+> 
+> # Model summary
+> summary(model)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Total_Duration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code +      (1 | Cross.Foster.Code)
+   Data: data
+
+REML criterion at convergence: 1981.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1291 -0.2968 -0.1375  0.0492  3.9480 
+
+Random effects:
+ Groups            Name        Variance Std.Dev.
+ Cross.Foster.Code (Intercept)  637.8   25.25   
+ Residual                      1972.5   44.41   
+Number of obs: 193, groups:  Cross.Foster.Code, 48
+
+Fixed effects:
+                                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                                      291.744     11.701 100.939  24.932   <2e-16 ***
+Birth.CodeC section                               18.463     14.993  88.267   1.231    0.221    
+Diet.CodeCreatine                                  0.396     18.841  83.162   0.021    0.983    
+Age.Code7                                         -8.356     12.226 156.489  -0.683    0.495    
+Sex.CodeMale                                       2.882      7.668 179.566   0.376    0.707    
+Birth.CodeC section:Diet.CodeCreatine            -22.697     25.488  80.807  -0.890    0.376    
+Birth.CodeC section:Age.Code7                      6.622     16.184 157.836   0.409    0.683    
+Diet.CodeCreatine:Age.Code7                       -4.580     20.338 149.735  -0.225    0.822    
+Birth.CodeC section:Diet.CodeCreatine:Age.Code7    1.831     27.864 153.039   0.066    0.948    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Br.CCs Dt.CdC Ag.Cd7 Sx.CdM Br.CCs:D.CC B.CCs:A D.CC:A
+Brth.CdCsct -0.686                                                       
+Diet.CdCrtn -0.579  0.438                                                
+Age.Code7   -0.542  0.422  0.336                                         
+Sex.CodeMal -0.298 -0.084  0.043  0.004                                  
+Br.CCs:D.CC  0.415 -0.585 -0.737 -0.248  0.012                           
+Br.CCs:A.C7  0.402 -0.581 -0.253 -0.755  0.024  0.341                    
+Dt.CdC:A.C7  0.341 -0.249 -0.547 -0.601 -0.053  0.402       0.453        
+B.CCs:D.CC: -0.248  0.333  0.399  0.439  0.036 -0.534      -0.580  -0.730
+> 
+> # ANOVA table for fixed effects
+> aov_results <- anova(model)
+> print(aov_results)
+Type III Analysis of Variance Table with Satterthwaite's method
+                               Sum Sq Mean Sq NumDF   DenDF F value Pr(>F)
+Birth.Code                    2005.68 2005.68     1  44.096  1.0168 0.3188
+Diet.Code                     2767.22 2767.22     1  44.416  1.4029 0.2425
+Age.Code                      1924.72 1924.72     1 153.493  0.9758 0.3248
+Sex.Code                       278.70  278.70     1 179.566  0.1413 0.7074
+Birth.Code:Diet.Code          2013.17 2013.17     1  44.024  1.0206 0.3179
+Birth.Code:Age.Code            575.81  575.81     1 153.561  0.2919 0.5898
+Diet.Code:Age.Code             136.42  136.42     1 153.647  0.0692 0.7929
+Birth.Code:Diet.Code:Age.Code    8.52    8.52     1 153.039  0.0043 0.9477
+> 
+> # Likelihood Ratio Test to check significance of Cross Foster Code
+> model_reduced <- lm(Total_Duration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+> lrt_results <- anova(model, model_reduced)
+refitting model(s) with ML (instead of REML)
+> print(lrt_results)
+Data: data
+Models:
+model_reduced: Total_Duration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code
+model: Total_Duration ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + (1 | Cross.Foster.Code)
+              npar    AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)    
+model_reduced   10 2075.4 2108.0 -1027.7   2055.4                         
+model           11 2063.3 2099.1 -1020.6   2041.3 14.108  1  0.0001726 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> 
+> #OFT: Total Distance
+> 
+> 
+> 
+> # Fit a mixed-effects model with interactions
+> model <- lmer(Total_Distance ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
++                 (1 | Cross.Foster.Code), data = data)
+> 
+> # Model summary
+> summary(model)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Total_Distance ~ Birth.Code * Diet.Code * Age.Code + Sex.Code +      (1 | Cross.Foster.Code)
+   Data: data
+
+REML criterion at convergence: 3555.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.2167 -0.5791 -0.0566  0.4302  5.1416 
+
+Random effects:
+ Groups            Name        Variance Std.Dev.
+ Cross.Foster.Code (Intercept)  2567715 1602    
+ Residual                      10623264 3259    
+Number of obs: 193, groups:  Cross.Foster.Code, 48
+
+Fixed effects:
+                                                Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                                      1135.88     819.20    92.43   1.387    0.169    
+Birth.CodeC section                              1125.55    1044.79    78.73   1.077    0.285    
+Diet.CodeCreatine                                  85.52    1310.53    74.54   0.065    0.948    
+Age.Code7                                        5287.02     894.43   150.20   5.911  2.2e-08 ***
+Sex.CodeMale                                      713.24     549.44   171.06   1.298    0.196    
+Birth.CodeC section:Diet.CodeCreatine            -564.24    1771.09    71.99  -0.319    0.751    
+Birth.CodeC section:Age.Code7                    1086.09    1183.38   152.23   0.918    0.360    
+Diet.CodeCreatine:Age.Code7                     -1655.68    1490.93   141.58  -1.110    0.269    
+Birth.CodeC section:Diet.CodeCreatine:Age.Code7   631.26    2040.61   145.81   0.309    0.757    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Br.CCs Dt.CdC Ag.Cd7 Sx.CdM Br.CCs:D.CC B.CCs:A D.CC:A
+Brth.CdCsct -0.683                                                       
+Diet.CdCrtn -0.580  0.439                                                
+Age.Code7   -0.567  0.442  0.353                                         
+Sex.CodeMal -0.310 -0.081  0.049  0.008                                  
+Br.CCs:D.CC  0.416 -0.587 -0.738 -0.261  0.008                           
+Br.CCs:A.C7  0.420 -0.608 -0.266 -0.756  0.021  0.358                    
+Dt.CdC:A.C7  0.355 -0.261 -0.577 -0.600 -0.054  0.424       0.452        
+B.CCs:D.CC: -0.259  0.348  0.421  0.439  0.039 -0.563      -0.579  -0.731
+> 
+> # ANOVA table for fixed effects
+> aov_results <- anova(model)
+> print(aov_results)
+Type III Analysis of Variance Table with Satterthwaite's method
+                                  Sum Sq    Mean Sq NumDF   DenDF  F value  Pr(>F)    
+Birth.Code                      47205471   47205471     1  34.099   4.4436 0.04246 *  
+Diet.Code                       14854090   14854090     1  34.437   1.3983 0.24512    
+Age.Code                      1088476922 1088476922     1 146.357 102.4616 < 2e-16 ***
+Sex.Code                        17901238   17901238     1 171.064   1.6851 0.19600    
+Birth.Code:Diet.Code              306632     306632     1  34.033   0.0289 0.86610    
+Birth.Code:Age.Code             20001402   20001402     1 146.574   1.8828 0.17211    
+Diet.Code:Age.Code              18322852   18322852     1 146.592   1.7248 0.19113    
+Birth.Code:Diet.Code:Age.Code    1016616    1016616     1 145.807   0.0957 0.75750    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> # Likelihood Ratio Test to check significance of Cross Foster Code
+> model_reduced <- lm(Total_Distance ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+> lrt_results <- anova(model, model_reduced)
+refitting model(s) with ML (instead of REML)
+> print(lrt_results)
+Data: data
+Models:
+model_reduced: Total_Distance ~ Birth.Code * Diet.Code * Age.Code + Sex.Code
+model: Total_Distance ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + (1 | Cross.Foster.Code)
+              npar    AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)  
+model_reduced   10 3717.7 3750.4 -1848.9   3697.7                       
+model           11 3714.4 3750.2 -1846.2   3692.4 5.3956  1    0.02019 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> # Additional post-hoc tests for significant age main effects 
+> if ("Age.Code" %in% rownames(aov_results)) {
++   posthoc_age <- emmeans(model, pairwise ~ Age.Code, adjust = "tukey")
++   print(posthoc_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Age.Code emmean  SE   df lower.CL upper.CL
+ 3          1957 444 79.7     1073     2841
+ 7          7117 450 80.0     6222     8013
+
+Results are averaged over the levels of: Birth.Code, Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast              estimate  SE  df t.ratio p.value
+ Age.Code3 - Age.Code7    -5160 510 151 -10.109  <.0001
+
+Results are averaged over the levels of: Birth.Code, Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+
+> # Additional post-hoc tests for significant birth main effects 
+> if ("Birth.Code" %in% rownames(aov_results)) {
++   posthoc_age <- emmeans(model, pairwise ~ Birth.Code, adjust = "tukey")
++   print(posthoc_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Birth.Code emmean  SE   df lower.CL upper.CL
+ Asphyxia     3765 538 39.7     2677     4853
+ C section    5309 500 38.6     4298     6321
+
+Results are averaged over the levels of: Diet.Code, Age.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast             estimate  SE   df t.ratio p.value
+ Asphyxia - C section    -1544 735 39.1  -2.101  0.0421
+
+Results are averaged over the levels of: Diet.Code, Age.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+
+> #OFT: Total_Velocity
+> 
+> 
+> # Fit a mixed-effects model with interactions
+> model <- lmer(Total_Velocity ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
++                 (1 | Cross.Foster.Code), data = data)
+> 
+> # Model summary
+> summary(model)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Total_Velocity ~ Birth.Code * Diet.Code * Age.Code + Sex.Code +      (1 | Cross.Foster.Code)
+   Data: data
+
+REML criterion at convergence: 1223.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1264 -0.5383 -0.1375  0.3835  5.6599 
+
+Random effects:
+ Groups            Name        Variance Std.Dev.
+ Cross.Foster.Code (Intercept)  5.274   2.297   
+ Residual                      34.753   5.895   
+Number of obs: 193, groups:  Cross.Foster.Code, 48
+
+Fixed effects:
+                                                  Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                                       2.135936   1.395414  97.826188   1.531    0.129    
+Birth.CodeC section                               1.706118   1.768407  82.772773   0.965    0.337    
+Diet.CodeCreatine                                 0.002771   2.214389  80.146508   0.001    0.999    
+Age.Code7                                         7.841682   1.610482 151.406955   4.869 2.79e-06 ***
+Sex.CodeMale                                      0.996728   0.958684 156.656528   1.040    0.300    
+Birth.CodeC section:Diet.CodeCreatine            -1.100004   2.988360  77.212037  -0.368    0.714    
+Birth.CodeC section:Age.Code7                     1.918824   2.129087 154.043596   0.901    0.369    
+Diet.CodeCreatine:Age.Code7                      -3.666135   2.692457 142.011382  -1.362    0.175    
+Birth.CodeC section:Diet.CodeCreatine:Age.Code7   1.555450   3.679797 146.653394   0.423    0.673    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Br.CCs Dt.CdC Ag.Cd7 Sx.CdM Br.CCs:D.CC B.CCs:A D.CC:A
+Brth.CdCsct -0.681                                                       
+Diet.CdCrtn -0.582  0.440                                                
+Age.Code7   -0.599  0.468  0.375                                         
+Sex.CodeMal -0.326 -0.074  0.057  0.013                                  
+Br.CCs:D.CC  0.417 -0.589 -0.739 -0.278  0.000                           
+Br.CCs:A.C7  0.445 -0.643 -0.283 -0.756  0.015  0.380                    
+Dt.CdC:A.C7  0.374 -0.277 -0.616 -0.599 -0.056  0.454       0.452        
+B.CCs:D.CC: -0.274  0.368  0.451  0.438  0.043 -0.604      -0.578  -0.732
+> 
+> # ANOVA table for fixed effects
+> aov_results <- anova(model)
+> print(aov_results)
+Type III Analysis of Variance Table with Satterthwaite's method
+                               Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+Birth.Code                     153.22  153.22     1  32.002  4.4088   0.04373 *  
+Diet.Code                       96.69   96.69     1  32.417  2.7823   0.10494    
+Age.Code                      2226.74 2226.74     1 147.214 64.0725 3.306e-13 ***
+Sex.Code                        37.57   37.57     1 156.657  1.0809   0.30009    
+Birth.Code:Diet.Code             0.64    0.64     1  31.932  0.0183   0.89323    
+Birth.Code:Age.Code             74.51   74.51     1 147.637  2.1440   0.14526    
+Diet.Code:Age.Code              85.69   85.69     1 147.525  2.4656   0.11851    
+Birth.Code:Diet.Code:Age.Code    6.21    6.21     1 146.653  0.1787   0.67313    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> # Likelihood Ratio Test to check significance of Cross Foster Code
+> model_reduced <- lm(Total_Velocity ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+> lrt_results <- anova(model, model_reduced)
+refitting model(s) with ML (instead of REML)
+> print(lrt_results)
+Data: data
+Models:
+model_reduced: Total_Velocity ~ Birth.Code * Diet.Code * Age.Code + Sex.Code
+model: Total_Velocity ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + (1 | Cross.Foster.Code)
+              npar    AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)
+model_reduced   10 1267.6 1300.2 -623.81   1247.6                     
+model           11 1267.4 1303.3 -622.71   1245.4 2.2049  1     0.1376
+> #OFT: %_Duration_outer_zone
+> 
+> 
+> # Fit a mixed-effects model with interactions
+> model <- lmer(X._Duration_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
++                 (1 | Cross.Foster.Code), data = data)
+> 
+> # Model summary
+> summary(model)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: X._Duration_outer_zone ~ Birth.Code * Diet.Code * Age.Code +      Sex.Code + (1 | Cross.Foster.Code)
+   Data: data
+
+REML criterion at convergence: 1576
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.1511 -0.1218  0.0482  0.3778  1.8496 
+
+Random effects:
+ Groups            Name        Variance Std.Dev.
+ Cross.Foster.Code (Intercept)  36.57    6.047  
+ Residual                      235.37   15.342  
+Number of obs: 193, groups:  Cross.Foster.Code, 48
+
+Fixed effects:
+                                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                                       74.990      3.641 121.713  20.596  < 2e-16 ***
+Birth.CodeC section                               18.479      4.616 107.621   4.004 0.000115 ***
+Diet.CodeCreatine                                 17.962      5.780 104.939   3.108 0.002427 ** 
+Age.Code7                                         24.818      4.192 163.600   5.920 1.84e-08 ***
+Sex.CodeMale                                      -2.608      2.499 167.637  -1.044 0.298145    
+Birth.CodeC section:Diet.CodeCreatine            -12.911      7.801 102.002  -1.655 0.100982    
+Birth.CodeC section:Age.Code7                    -19.266      5.542 165.351  -3.476 0.000650 ***
+Diet.CodeCreatine:Age.Code7                      -17.146      7.007 157.128  -2.447 0.015513 *  
+Birth.CodeC section:Diet.CodeCreatine:Age.Code7   13.017      9.578 160.363   1.359 0.176015    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Br.CCs Dt.CdC Ag.Cd7 Sx.CdM Br.CCs:D.CC B.CCs:A D.CC:A
+Brth.CdCsct -0.681                                                       
+Diet.CdCrtn -0.582  0.440                                                
+Age.Code7   -0.598  0.467  0.374                                         
+Sex.CodeMal -0.326 -0.074  0.057  0.013                                  
+Br.CCs:D.CC  0.417 -0.588 -0.739 -0.277  0.000                           
+Br.CCs:A.C7  0.444 -0.641 -0.282 -0.756  0.016  0.379                    
+Dt.CdC:A.C7  0.373 -0.276 -0.614 -0.599 -0.055  0.453       0.452        
+B.CCs:D.CC: -0.274  0.367  0.449  0.438  0.043 -0.602      -0.578  -0.732
+> 
+> # ANOVA table for fixed effects
+> aov_results <- anova(model)
+> print(aov_results)
+Type III Analysis of Variance Table with Satterthwaite's method
+                              Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+Birth.Code                     771.1   771.1     1  49.264  3.2759  0.076404 .  
+Diet.Code                      924.8   924.8     1  49.824  3.9290  0.052989 .  
+Age.Code                      4003.2  4003.2     1 160.750 17.0080 5.954e-05 ***
+Sex.Code                       256.4   256.4     1 167.637  1.0892  0.298145    
+Birth.Code:Diet.Code           248.6   248.6     1  49.168  1.0563  0.309082    
+Birth.Code:Age.Code           1667.2  1667.2     1 161.034  7.0833  0.008569 ** 
+Diet.Code:Age.Code            1161.8  1161.8     1 160.962  4.9362  0.027694 *  
+Birth.Code:Diet.Code:Age.Code  434.8   434.8     1 160.363  1.8472  0.176015    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> # Likelihood Ratio Test to check significance of Cross Foster Code
+> model_reduced <- lm(X._Duration_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+> lrt_results <- anova(model, model_reduced)
+refitting model(s) with ML (instead of REML)
+> print(lrt_results)
+Data: data
+Models:
+model_reduced: X._Duration_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code
+model: X._Duration_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + (1 | Cross.Foster.Code)
+              npar    AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)  
+model_reduced   10 1641.2 1673.9 -810.63   1621.2                       
+model           11 1637.1 1673.0 -807.54   1615.1 6.1737  1    0.01297 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # Additional post-hoc tests for significant age main effects 
+> if ("Age.Code" %in% rownames(aov_results)) {
++   posthoc_age <- emmeans(model, pairwise ~ Age.Code, adjust = "tukey")
++   print(posthoc_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Age.Code emmean   SE   df lower.CL upper.CL
+ 3          88.7 1.96 85.7     84.8     92.6
+ 7          98.5 1.98 85.8     94.6    102.5
+
+Results are averaged over the levels of: Birth.Code, Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast              estimate  SE  df t.ratio p.value
+ Age.Code3 - Age.Code7    -9.87 2.4 153  -4.118  0.0001
+
+Results are averaged over the levels of: Birth.Code, Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+
+> if ("Diet.Code:Age.Code" %in% rownames(aov_results)) {
++   posthoc_diet_age <- emmeans(model, pairwise ~ Diet.Code * Age.Code, adjust = "tukey")
++   print(posthoc_diet_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Diet.Code Age.Code emmean   SE   df lower.CL upper.CL
+ Control   3          82.9 2.31 93.5     78.3     87.5
+ Creatine  3          94.4 3.16 82.4     88.1    100.7
+ Control   7          98.1 2.19 88.7     93.8    102.5
+ Creatine  7          99.0 3.30 84.5     92.4    105.6
+
+Results are averaged over the levels of: Birth.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast                                estimate   SE    df t.ratio p.value
+ Control Age.Code3 - Creatine Age.Code3   -11.507 3.93  86.5  -2.931  0.0221
+ Control Age.Code3 - Control Age.Code7    -15.185 2.78 158.0  -5.463  <.0001
+ Control Age.Code3 - Creatine Age.Code7   -16.054 4.04  87.8  -3.976  0.0008
+ Creatine Age.Code3 - Control Age.Code7    -3.678 3.85  84.4  -0.955  0.7751
+ Creatine Age.Code3 - Creatine Age.Code7   -4.547 3.90 150.0  -1.164  0.6502
+ Control Age.Code7 - Creatine Age.Code7    -0.869 3.97  85.8  -0.219  0.9963
+
+Results are averaged over the levels of: Birth.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+> 
+> 
+> if ("Birth.Code:Age.Code" %in% rownames(aov_results)) {
++   posthoc_diet_age <- emmeans(model, pairwise ~ Birth.Code * Age.Code, adjust = "tukey")
++   print(posthoc_diet_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Birth.Code Age.Code emmean   SE   df lower.CL upper.CL
+ Asphyxia   3          82.7 2.90 87.4     76.9     88.4
+ C section  3          94.7 2.63 83.6     89.5     99.9
+ Asphyxia   7          98.9 2.87 87.7     93.2    104.6
+ C section  7          98.2 2.74 83.3     92.7    103.6
+
+Results are averaged over the levels of: Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast                                  estimate   SE    df t.ratio p.value
+ Asphyxia Age.Code3 - C section Age.Code3   -12.024 3.93  85.6  -3.061  0.0153
+ Asphyxia Age.Code3 - Asphyxia Age.Code7    -16.244 3.50 148.8  -4.636  <.0001
+ Asphyxia Age.Code3 - C section Age.Code7   -15.511 3.99  85.0  -3.890  0.0011
+ C section Age.Code3 - Asphyxia Age.Code7    -4.221 3.90  85.9  -1.083  0.7011
+ C section Age.Code3 - C section Age.Code7   -3.487 3.27 157.2  -1.065  0.7114
+ Asphyxia Age.Code7 - C section Age.Code7     0.734 3.96  85.4   0.185  0.9977
+
+Results are averaged over the levels of: Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+> #OFT: %_Distance_outer_zone
+> 
+> 
+> # Fit a mixed-effects model with interactions
+> model <- lmer(X._Distance_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + 
++                 (1 | Cross.Foster.Code), data = data)
+> 
+> # Model summary
+> summary(model)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: X._Distance_outer_zone ~ Birth.Code * Diet.Code * Age.Code +      Sex.Code + (1 | Cross.Foster.Code)
+   Data: data
+
+REML criterion at convergence: 1574.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.3784 -0.1939  0.0557  0.3598  1.9213 
+
+Random effects:
+ Groups            Name        Variance Std.Dev.
+ Cross.Foster.Code (Intercept)  34.72    5.892  
+ Residual                      234.37   15.309  
+Number of obs: 193, groups:  Cross.Foster.Code, 48
+
+Fixed effects:
+                                                Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                                       70.602      3.614 120.056  19.535  < 2e-16 ***
+Birth.CodeC section                               17.291      4.579 105.732   3.776 0.000263 ***
+Diet.CodeCreatine                                 17.664      5.733 103.208   3.081 0.002646 ** 
+Age.Code7                                         27.473      4.181 162.754   6.570 6.47e-10 ***
+Sex.CodeMale                                      -1.369      2.485 165.822  -0.551 0.582606    
+Birth.CodeC section:Diet.CodeCreatine            -10.995      7.737 100.230  -1.421 0.158387    
+Birth.CodeC section:Age.Code7                    -17.595      5.528 164.612  -3.183 0.001742 ** 
+Diet.CodeCreatine:Age.Code7                      -15.542      6.992 155.991  -2.223 0.027655 *  
+Birth.CodeC section:Diet.CodeCreatine:Age.Code7    9.723      9.555 159.370   1.018 0.310409    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) Br.CCs Dt.CdC Ag.Cd7 Sx.CdM Br.CCs:D.CC B.CCs:A D.CC:A
+Brth.CdCsct -0.681                                                       
+Diet.CdCrtn -0.582  0.440                                                
+Age.Code7   -0.600  0.469  0.376                                         
+Sex.CodeMal -0.327 -0.073  0.057  0.014                                  
+Br.CCs:D.CC  0.417 -0.589 -0.739 -0.278 -0.001                           
+Br.CCs:A.C7  0.446 -0.644 -0.283 -0.756  0.015  0.381                    
+Dt.CdC:A.C7  0.375 -0.277 -0.618 -0.599 -0.056  0.455       0.451        
+B.CCs:D.CC: -0.275  0.369  0.452  0.438  0.044 -0.606      -0.578  -0.732
+> 
+> # ANOVA table for fixed effects
+> aov_results <- anova(model)
+> print(aov_results)
+Type III Analysis of Variance Table with Satterthwaite's method
+                              Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+Birth.Code                     726.4   726.4     1  47.210  3.0992  0.084809 .  
+Diet.Code                     1147.0  1147.0     1  47.765  4.8941  0.031765 *  
+Age.Code                      7317.9  7317.9     1 159.772 31.2230 9.708e-08 ***
+Sex.Code                        71.1    71.1     1 165.822  0.3032  0.582606    
+Birth.Code:Diet.Code           232.6   232.6     1  47.115  0.9925  0.324217    
+Birth.Code:Age.Code           1662.1  1662.1     1 160.081  7.0917  0.008535 ** 
+Diet.Code:Age.Code            1172.0  1172.0     1 159.997  5.0005  0.026723 *  
+Birth.Code:Diet.Code:Age.Code  242.7   242.7     1 159.370  1.0355  0.310409    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> # Likelihood Ratio Test to check significance of Cross Foster Code
+> model_reduced <- lm(X._Distance_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code, data = data)
+> lrt_results <- anova(model, model_reduced)
+refitting model(s) with ML (instead of REML)
+> print(lrt_results)
+Data: data
+Models:
+model_reduced: X._Distance_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code
+model: X._Distance_outer_zone ~ Birth.Code * Diet.Code * Age.Code + Sex.Code + (1 | Cross.Foster.Code)
+              npar    AIC    BIC  logLik deviance  Chisq Df Pr(>Chisq)  
+model_reduced   10 1638.6 1671.2 -809.31   1618.6                       
+model           11 1635.4 1671.3 -806.71   1613.4 5.1941  1    0.02266 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # Additional post-hoc tests for significant age main effects 
+> if ("Age.Code" %in% rownames(aov_results)) {
++   posthoc_age <- emmeans(model, pairwise ~ Age.Code, adjust = "tukey")
++   print(posthoc_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Age.Code emmean   SE   df lower.CL upper.CL
+ 3          84.6 1.94 86.3     80.8     88.5
+ 7          98.0 1.97 86.4     94.1    101.9
+
+Results are averaged over the levels of: Birth.Code, Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast              estimate   SE  df t.ratio p.value
+ Age.Code3 - Age.Code7    -13.3 2.39 153  -5.580  <.0001
+
+Results are averaged over the levels of: Birth.Code, Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+
+> 
+> 
+> 
+> if ("Diet.Code:Age.Code" %in% rownames(aov_results)) {
++   posthoc_diet_age <- emmeans(model, pairwise ~ Diet.Code * Age.Code, adjust = "tukey")
++   print(posthoc_diet_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Diet.Code Age.Code emmean   SE   df lower.CL upper.CL
+ Control   3          78.6 2.30 94.0     74.0     83.1
+ Creatine  3          90.7 3.14 83.1     84.5     97.0
+ Control   7          97.2 2.18 89.4     92.9    101.6
+ Creatine  7          98.7 3.28 85.0     92.2    105.2
+
+Results are averaged over the levels of: Birth.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast                                estimate   SE    df t.ratio p.value
+ Control Age.Code3 - Creatine Age.Code3    -12.17 3.89  87.1  -3.124  0.0127
+ Control Age.Code3 - Control Age.Code7     -18.68 2.77 158.2  -6.736  <.0001
+ Control Age.Code3 - Creatine Age.Code7    -20.16 4.01  88.3  -5.033  <.0001
+ Creatine Age.Code3 - Control Age.Code7     -6.51 3.82  85.0  -1.704  0.3279
+ Creatine Age.Code3 - Creatine Age.Code7    -7.99 3.90 150.1  -2.052  0.1738
+ Control Age.Code7 - Creatine Age.Code7     -1.49 3.93  86.3  -0.378  0.9815
+
+Results are averaged over the levels of: Birth.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+> 
+> 
+> if ("Birth.Code:Age.Code" %in% rownames(aov_results)) {
++   posthoc_diet_age <- emmeans(model, pairwise ~ Birth.Code * Age.Code, adjust = "tukey")
++   print(posthoc_diet_age)
++ }
+NOTE: Results may be misleading due to involvement in interactions
+$emmeans
+ Birth.Code Age.Code emmean   SE   df lower.CL upper.CL
+ Asphyxia   3          78.7 2.88 88.0     73.0     84.5
+ C section  3          90.5 2.61 84.2     85.3     95.7
+ Asphyxia   7          98.5 2.85 88.4     92.8    104.1
+ C section  7          97.5 2.71 83.8     92.1    102.9
+
+Results are averaged over the levels of: Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$contrasts
+ contrast                                  estimate   SE    df t.ratio p.value
+ Asphyxia Age.Code3 - C section Age.Code3    -11.79 3.90  86.2  -3.027  0.0168
+ Asphyxia Age.Code3 - Asphyxia Age.Code7     -19.70 3.50 148.9  -5.636  <.0001
+ Asphyxia Age.Code3 - C section Age.Code7    -18.76 3.95  85.5  -4.744  <.0001
+ C section Age.Code3 - Asphyxia Age.Code7     -7.91 3.87  86.5  -2.045  0.1798
+ C section Age.Code3 - C section Age.Code7    -6.97 3.27 157.4  -2.133  0.1472
+ Asphyxia Age.Code7 - C section Age.Code7      0.94 3.93  86.0   0.239  0.9952
+
+Results are averaged over the levels of: Diet.Code, Sex.Code 
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 4 estimates 
+
+> 
